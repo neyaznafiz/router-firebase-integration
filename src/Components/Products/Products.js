@@ -1,11 +1,17 @@
 import React from 'react';
-import useFirebase from '../../Hooks/useFirebase';
 import './Products.css'
+import { auth } from '../../Firebase/firebase.init';
+// import useFirebase from '../../Hooks/useFirebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 const Products = () => {
 
-    const {user} = useFirebase()
+    // using coustom created hook
+    // const {user} = useFirebase()
+
+    // ussing react-firebase-hooks
+    const [user] = useAuthState(auth)
 
     return (
         <div>
