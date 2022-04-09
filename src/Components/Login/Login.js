@@ -1,12 +1,16 @@
 import React from 'react';
+import useFirebase from '../../Hooks/useFirebase';
 import './Login.css'
 
 const Login = () => {
+
+    const {} = useFirebase()
+
     return (
         <div>
 
-<h2>Login Please</h2>
-            
+            <h2>Login Please</h2>
+
             <form className='login'>
                 <input type="email" placeholder='Your Email' />
                 <br />
@@ -14,6 +18,8 @@ const Login = () => {
                 <br />
                 <input type="submit" value="Login" />
             </form>
+
+            <button>Continue with google</button>
         </div>
     );
 };
