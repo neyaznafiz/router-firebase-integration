@@ -4,7 +4,16 @@ import './Login.css'
 const Login = () => {
     return (
         <div>
-            <h1>login please</h1>
+
+<h2>Login Please</h2>
+            
+            <form className='login'>
+                <input type="email" placeholder='Your Email' />
+                <br />
+                <input type="password" placeholder='Your password' />
+                <br />
+                <input type="submit" value="Login" />
+            </form>
         </div>
     );
 };
