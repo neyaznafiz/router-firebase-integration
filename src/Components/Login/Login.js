@@ -4,7 +4,7 @@ import './Login.css'
 
 const Login = () => {
 
-    const {} = useFirebase()
+    const {signInWithGoogle} = useFirebase()
 
     return (
         <div>
@@ -19,7 +19,7 @@ const Login = () => {
                 <input type="submit" value="Login" />
             </form>
 
-            <button>Continue with google</button>
+            <button onClick={signInWithGoogle}>Continue with google</button>
         </div>
     );
 };
