@@ -13,3 +13,10 @@
 .header nav a:hover {
 color: goldenrod;
 }
+
+.img{
+    width: 23px;
+    height: 23px;
+    margin-right: 9px;
+    padding-top: 20px;
+} 

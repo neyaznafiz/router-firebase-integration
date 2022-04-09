@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 
 const Header = () => {
-    const { user } = useFirebase()
+    const { user, handleSignOut } = useFirebase()
     return (
         <div className='header'>
 
@@ -13,9 +13,13 @@ const Header = () => {
                 <Link to="/products">Products</Link>
                 <Link to="/orders">Orders</Link>
                 <Link to="/register">Register</Link>
+                <span>{user?.displayName && user.displayName}</span>
+                
+                {/* <img className='img' src={user?.photoURL && user.photoURL} alt="" /> */}
+                
                 {
-                    user.uid ? 
-                        <button>Signout</button>
+                    user?.uid ? 
+                        <button onClick={handleSignOut}>Signout</button>
                         :
                         <Link to="/login">Login</Link>
                 }
