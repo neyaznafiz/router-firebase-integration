@@ -1,10 +1,17 @@
 import React from 'react';
-import useFirebase from '../../Hooks/useFirebase';
 import './Login.css'
+// import useFirebase from '../../Hooks/useFirebase';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { auth } from '../../Firebase/firebase.init';
+
 
 const Login = () => {
 
-    const {signInWithGoogle} = useFirebase()
+    // using coustom created hook
+    // const {signInWithGoogle} = useFirebase()
+
+    // ussing react-firebase-hooks
+    const [signInWithGoogle, user] = useSignInWithGoogle(auth)
 
     return (
         <div>
@@ -19,7 +26,8 @@ const Login = () => {
                 <input type="submit" value="Login" />
             </form>
 
-            <button onClick={signInWithGoogle}>Continue with google</button>
+            {/* <button onClick={signInWithGoogle}>Continue with google</button> */}
+            <button onClick={() => signInWithGoogle()}>Continue with google</button>
         </div>
     );
 };
